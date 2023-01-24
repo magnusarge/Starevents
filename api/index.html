@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Starevents API</title>
+    <meta content="Star observers events in Estonia." name="description">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cd30b48de3.js" crossorigin="anonymous"></script>
+
+    <link href="../css/starevents.css" rel="stylesheet">
+
+</head>
+<body class="plain api_documentation">
+
+<div id="container">
+    <div class="content">
+        <div class="content-wrapper">
+            <h1>Star observing events API</h1>
+
+            <ul class="main-menu">
+                <li><a href="../">Events</a></li>
+                <li><a href="../attendees.html">Attendees</a></li>
+                <li class="current">Documentation</li>
+            </ul>
+
+            <h2>Overview</h2>
+            <p>There will be an imaginary event for star observers held in different Estonian cities - in
+            Tallinn, Tartu, Narva, Pärnu, Jõhvi, Jõgeva, Põlva and Valga. People will gather to observe and learn about the stars.</p>
+            <p>For the next 5 upcoming days, there will be 4 sessions available for registrations for each city. Sessions will be 2,5h long and will start at 20:00, 23:00, 02:00, and 05:00. There is no limit for registrations, but an event takes place only in case of a clear sky.</p>
+
+            <h3>Events API</h3>
+            <p>Events API is intended for getting list of times for the next 5 days with clear sky weather conditions in 8 places in Estonia.</p>
+
+            <h4>Api call</h4>
+            <p><a href="https://tirbi.ee/starevents/api/events/" target="_blank">https://tirbi.ee/starevents/api/events/</a></p>
+
+            <h4>Parameters</h4>
+            <p>There are no parameters in this call.</p>
+
+            <h4>Response</h4>
+            <p>Response is in JSON format.</p>
+
+            <h4>Fields in response</h4>
+            <pre>
+{
+  "max_clouds": 10,
+  "list": {
+    "EE": {
+      "country_name": "Estonia",
+      "0": {
+        "city_name": "Tallinn",
+        "events": [
+          {
+            "timestamp": 1674842400,
+            "dt_text": "2023-01-27 20:00",
+            "clouds": 6
+          },
+          {
+            "timestamp": 1674853200,
+            "dt_text": "2023-01-27 23:00",
+            "clouds": 3
+          },
+          {
+            "timestamp": 1674864000,
+            "dt_text": "2023-01-28 02:00",
+            "clouds": 5
+          }
+        ]
+      }
+    }
+  }
+}
+
+            </pre>
+            <ul class="response-fields">
+                <li><span>max_clouds</span> Indicates percent of clouds in the sky when visibility becomes zero. Before that is still chance to the clear sky.</li>
+                <li><span>list</span> List of countries that are present in query. Currently that is only Estonia.</li>
+                <li><span>EE</span> Country code.</li>
+                <li><span>country_name</span> Country name.</li>
+                <li><span>city_name</span> Name of the city.</li>
+                <li><span>events</span> List of the events in the city. Empty if no events.</li>
+                <li><span>timestamp</span> Event's beginning time. UNIX timestamp.</li>
+                <li><span>dt_text</span> Event's beginning time in readable format.</li>
+                <li><span>clouds</span> % of clouds. Can't be bigger than "max_clouds".</li>
+
+            </ul>
+
+            
+
+            <h3>Registration API</h3>
+            <p>Registration API allows guests to register to an event.</p>
+
+            <h4>Api call</h4>
+            <p><a href="https://tirbi.ee/starevents/api/register/" target="_blank">https://tirbi.ee/starevents/api/register/</a></p>
+
+            <h4>Parameters</h4>
+            <p>Parameters of this API call are sent via POST and are in JSON format.</p>
+            <ul class="response-fields">
+                <li><span>name</span> Participant's name.</li>
+                <li><span>email</span> Participant's email address.</li>
+                <li><span>timestamp</span> Event's beginning time. UNIX timestamp.</li>
+                <li><span>city</span> City name where the event takes place.</li>
+                <li><span>comment</span> User's note.</li>
+            </ul>
+
+            <h4>Response</h4>
+            <p>Response is in JSON format.</p>
+
+            <h4>Fields in response</h4>
+            <pre>
+{
+  "status": [
+    "ok"
+  ],
+  "errors": [
+    "Timestamp validation error."
+  ]
+}
+            </pre>
+            <ul class="response-fields">
+                <li><span>status</span> Only if registration was successful and no errors are present.</li>
+                <li><span>errors</span> List of errors that occured during the registration.</li>
+            </ul>
+
+
+
+            <h3>Attendees listing API</h3>
+            <p>Gets list of registered participants.</p>
+
+            <h4>Api call</h4>
+            <p><a href="https://tirbi.ee/starevents/api/attendees/" target="_blank">https://tirbi.ee/starevents/api/attendees/</a></p>
+
+            <h4>Parameters</h4>
+            <p>There are no parameters in this call.</p>
+
+            <h4>Response</h4>
+            <p>Response is in JSON format.</p>
+
+            <h4>Fields in response</h4>
+            <pre>
+{
+  "list": [
+    {
+      "name": "John",
+      "email": "john@ee.ee",
+      "town": "Tartu",
+      "timestamp": "2023-01-27 23:00:00",
+      "comment": ""
+    }
+  ]
+}                
+            </pre>
+            <ul class="response-fields">
+                <li><span>name</span> Participants' name.</li>
+                <li><span>email</span> Participants' email.</li>
+                <li><span>town</span> Where event takes place..</li>
+                <li><span>timestamp</span> Event's beginning date and time.</li>
+                <li><span>comment</span> Users comment.</li>
+            </ul>
+
+
+
+
+
+        </div>
+    </div>
+    <div class="footer">
+        <div class="content-wrapper">
+            <ul class="main-menu">
+                <li><a href="../">Events</a></li>
+                <li><a href="../attendees.html">Attendees</a></li>
+                <li class="current">Documentation</li>
+            </ul>
+            <p>Magnus Arge 2023</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Star observing events</title>
+    <meta content="Star observers events in Estonia." name="description">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cd30b48de3.js" crossorigin="anonymous"></script>
+
+    <link href="css/starevents.css" rel="stylesheet">
+    <link href="css/popup.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div id="container">
+    <div class="content">
+        <div class="header">
+            <div class="content-wrapper">
+                <h1>Star Observing events</h1>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+
+            <div id="event-container">
+                
+                <ul class="city-links noselect">
+                    <li class="city-link active" onclick="show(this, 'city-1')">Pärnu</li>
+                    <li class="city-link " onclick="show(this, 'city-2')">Jõgeva</li>
+                </ul>
+                
+                <div class="city-event-container visible" id="city-1">
+                <div class="event-row" title="Click to register. Visibility 25%">
+                    <div class="event-content">
+                        <div class="event-hour">23:00</div>
+                        <div class="event-date">
+                            <div class="day">Sat</div>
+                            <div class="date">Dec 
+                        21st</div>
+                        </div>
+                    </div>
+                    <div class="event-clouds">
+                        <div class="icon"><i class="fa-solid fa-eye-slash"></i></div>
+                        <div class="progress-frame">
+                            <div class="progress-bar" style="width:25%; background-color:crimson"></div>
+                        </div>
+                        <div class="icon"><i class="fa-solid fa-eye"></i></div>
+                        <div class="clouds-value">Clouds 6%</div>
+                    </div>
+                </div>
+                
+                <div class="event-row" title="Click to register. Visibility 25%">
+                    <div class="event-content">
+                        <div class="event-hour">02:00</div>
+                        <div class="event-date">
+                            <div class="day">Sun</div>
+                            <div class="date">Dec 
+                        22nd</div>
+                        </div>
+                    </div>
+                    <div class="event-clouds">
+                        <div class="icon"><i class="fa-solid fa-eye-slash"></i></div>
+                        <div class="progress-frame">
+                            <div class="progress-bar" style="width:25%; background-color:crimson"></div>
+                        </div>
+                        <div class="icon"><i class="fa-solid fa-eye"></i></div>
+                        <div class="clouds-value">Clouds 6%</div>
+                    </div>
+                </div>
+                
+                <div class="event-row" title="Click to register. Visibility 0%">
+                    <div class="event-content">
+                        <div class="event-hour">05:00</div>
+                        <div class="event-date">
+                            <div class="day">Sun</div>
+                            <div class="date">Dec 
+                        22nd</div>
+                        </div>
+                    </div>
+                    <div class="event-clouds">
+                        <div class="icon"><i class="fa-solid fa-eye-slash"></i></div>
+                        <div class="progress-frame">
+                            <div class="progress-bar" style="width:5%; background-color:crimson"></div>
+                        </div>
+                        <div class="icon"><i class="fa-solid fa-eye"></i></div>
+                        <div class="clouds-value">Clouds 8%</div>
+                    </div>
+                </div>
+                </div><div class="city-event-container " id="city-2">
+                <div class="event-row" title="Click to register. Visibility 13%">
+                    <div class="event-content">
+                        <div class="event-hour">05:00</div>
+                        <div class="event-date">
+                            <div class="day">Sun</div>
+                            <div class="date">Dec 22nd</div>
+                        </div>
+                    </div>
+                    <div class="event-clouds">
+                        <div class="icon"><i class="fa-solid fa-eye-slash"></i></div>
+                        <div class="progress-frame">
+                            <div class="progress-bar" style="width:13%; background-color:crimson"></div>
+                        </div>
+                        <div class="icon"><i class="fa-solid fa-eye"></i></div>
+                        <div class="clouds-value">Clouds 7%</div>
+                    </div>
+                </div>
+                </div></div>
+
+
+
+            <form>
+
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="content-wrapper">
+            <ul class="main-menu">
+                <li class="current">Events</li>
+                <li><a href="attendees.html">Attendees</a></li>
+                <li><a href="api">Documentation</a></li>
+            </ul>
+            <p>Magnus Arge 2023</p>
+        </div>
+    </div>
+</div>
+
+
+<div id="register" class="overlay" style="visibility: hidden;">
+	<div class="popup">
+		<h2>Register to an event</h2>
+		<a class="close" href="#listing" onclick="hideForm();">&times;</a>
+        <div id="form-success">
+            <div class="success-content">
+                <h3>Thank you!</h3>
+                <p>Your registration is sent. Meet you there ;)</p>
+            </div>
+            <div class="button-bar">
+                <a class="button" href="#listing" onclick="hideForm();">Close</a>
+            </div>
+        </div>
+		<div class="content" id="register-form">
+            <div id="form-messages"></div>
+            <div class="form-event-details">
+                <div class="form-row">
+                    <span class="label nowrap">City </span><div class="bold" id="form-details-city"></div>
+                </div>
+                <div class="form-row">
+                    <span class="label nowrap">Time </span><div class="bold" id="form-details-time"></div>
+                    <input type="hidden" id="timestamp" name="timestamp" value="" />
+                </div>
+                <div class="form-row">
+                    <span class="label nowrap">Weather </span><div class="bold" id="form-details-weather"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <span class="label nowrap">Your name<b class="mandatory">*</b> </span>
+                <input type="text" id="register-name" name="register-name" value="" />
+            </div>
+            <div class="form-row">
+                <span class="label nowrap">Your email<b class="mandatory">*</b> </span>
+                <input type="text" id="register-email" name="register-email" value="" />
+            </div>
+            <div class="form-column">
+                <div>Leave a comment to us (if you wish).</div>
+                <textarea id="register-comment" name="register-comment"></textarea>
+            </div>
+            <div class="form-row">
+                <span class="wide">By clicking on register button, you agree on all terms.<br>
+                    Fields marked with asterisk(*) are mandatory.</span>
+                <div><button class="button" id="register-button">Register&nbsp;<i class="fa-solid fa-arrow-right"></i></button></div>
+            </div>
+		</div>
+	</div>
+</div>
+
+
+<script src="js/datetime.js"></script>
+<script src="js/starevents.js"></script>
+<script src="js/post.js"></script>
+<script>
+
+    addEventListener('DOMContentLoaded', (event) => {
+        const eventsApiUrl = "/starevents/api/events/";
+        const eventContainer = document.getElementById("event-container");
+        loadEventList(eventsApiUrl, eventContainer);
+        //fillFormWithSampleData();
+    });
+
+    function showEventsForCity(self, id) {
+        document.querySelectorAll('.city-link').forEach(element => {
+            element.classList.remove("active");
+        });
+        self.classList.add("active");
+        document.querySelectorAll('.city-event-container').forEach(element => {
+            element.classList.remove("visible");
+        });
+        let visibleList = document.getElementById(id);
+        visibleList.classList.add("visible");
+    }
+
+    function fillFormWithSampleData() {
+        document.getElementById("register-name").value = "John";
+        document.getElementById("register-email").value = "john.d@email.com";
+    }
+
+</script>
+</body>
+</html>
