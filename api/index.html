@@ -30,12 +30,13 @@
             <p>There will be an imaginary event for star observers held in different Estonian cities - in
             Tallinn, Tartu, Narva, Pärnu, Jõhvi, Jõgeva, Põlva and Valga. People will gather to observe and learn about the stars.</p>
             <p>For the next 5 upcoming days, there will be 4 sessions available for registrations for each city. Sessions will be 2,5h long and will start at 20:00, 23:00, 02:00, and 05:00. There is no limit for registrations, but an event takes place only in case of a clear sky.</p>
+            <p>The website displays events that occur only under clear sky conditions. Visibility is determined by the amount of clouds present, as reported by openweathermaps.org. The visibility property reaches zero when cloud coverage is at value set in configuration.</p>
 
             <h3>Events API</h3>
             <p>Events API is intended for getting list of times for the next 5 days with clear sky weather conditions in 8 places in Estonia.</p>
 
             <h4>Api call</h4>
-            <p><a href="https://tirbi.ee/starevents/api/events/" target="_blank">https://tirbi.ee/starevents/api/events/</a></p>
+            <p><a href="/starevents/api/events/" target="_blank">/starevents/api/events/</a></p>
 
             <h4>Parameters</h4>
             <p>There are no parameters in this call.</p>
@@ -94,7 +95,7 @@
             <p>Registration API allows guests to register to an event.</p>
 
             <h4>Api call</h4>
-            <p><a href="https://tirbi.ee/starevents/api/register/" target="_blank">https://tirbi.ee/starevents/api/register/</a></p>
+            <p><a href="/starevents/api/register/" target="_blank">/starevents/api/register/</a></p>
 
             <h4>Parameters</h4>
             <p>Parameters of this API call are sent via POST and are in JSON format.</p>
@@ -131,7 +132,7 @@
             <p>Gets list of registered participants.</p>
 
             <h4>Api call</h4>
-            <p><a href="https://tirbi.ee/starevents/api/attendees/" target="_blank">https://tirbi.ee/starevents/api/attendees/</a></p>
+            <p><a href="/starevents/api/attendees/" target="_blank">/starevents/api/attendees/</a></p>
 
             <h4>Parameters</h4>
             <p>There are no parameters in this call.</p>
@@ -154,6 +155,7 @@
 }                
             </pre>
             <ul class="response-fields">
+                <li><span>list</span> List of attendees.</li>
                 <li><span>name</span> Participants' name.</li>
                 <li><span>email</span> Participants' email.</li>
                 <li><span>town</span> Where event takes place..</li>
