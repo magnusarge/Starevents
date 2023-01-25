@@ -110,6 +110,9 @@ function buildAllEventsList(eventList, eventContainer) {
         eventContainer.appendChild(eventCountMessage);
         eventContainer.appendChild(cityMenu);
         eventContainer.appendChild(allEvents);
+
+        /** Display max clouds */
+        displayMaxClouds(maxClouds);
     }
 }
 
@@ -160,6 +163,11 @@ function getVisibility(clouds, maxClouds) {
         visibility = Math.ceil(100 - (clouds / maxClouds * 100))
     }
     return visibility;
+}
+
+function displayMaxClouds(maxClouds) {
+    const cloudDisplay = document.getElementById("cloud-display");
+    cloudDisplay.innerText = maxClouds + "%";
 }
 
 function buildEventCell(dtText, clouds, maxClouds) {
