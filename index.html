@@ -21,17 +21,19 @@
     <div class="content">
         <div class="header">
             <div class="content-wrapper">
-                <h1>Star Observing events</h1>
+                <h1>Star observing events</h1>
             </div>
         </div>
 
-        <div class="content-wrapper">
+        <div class="content-wrapper content-wrapper-background">
+
+            <div class="introduction">The website displays events that occur only under clear sky conditions. Visibility is determined by the amount of clouds present, as reported by openweathermaps.org. The visibility property reaches zero when cloud coverage is at 10%.</div>
+            <div class="introduction">However, it's important to note that this website doesn't take any responsibility for the visibility of the sky. It's important to check the weather forecast before making any plans to observe the stars.</div>
 
             <div id="event-container">
                 
                 <ul class="city-links noselect">
-                    <li class="city-link active" onclick="show(this, 'city-1')">Pärnu</li>
-                    <li class="city-link " onclick="show(this, 'city-2')">Jõgeva</li>
+
                 </ul>
                 
                 <div class="city-event-container visible" id="city-1">

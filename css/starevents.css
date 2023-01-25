@@ -32,8 +32,11 @@ pre {
     font-size: 4em;
     line-height: 1.5em;
 }
+.introduction {
+    padding: 24px 48px 0;
+}
 .footer {
-    margin-top: 100px;
+    margin: 100px 0 48px;
 }
 .footer .content-wrapper {
     padding-top: 24px;  
@@ -46,14 +49,13 @@ pre {
     padding: 0 24px;
 }
 #event-container {
-    /* display: flex;
-    flex-direction: column;
-    flex-flow: column; */
     margin: 0;
-    background-color: rgba(16, 21, 28, .7);
-    padding: 24px 24px 48px;
-    border-radius: 12px;
+    padding: 24px;
     text-align: center;
+}
+.content-wrapper-background {
+    background-color: rgba(16, 21, 28, .7);
+    border-radius: 12px;
 }
 .event-row {
     display: flex;
@@ -199,6 +201,9 @@ span.wide {
     flex-direction: row;
     margin: 12px 0;
 }
+.form-row:last-child {
+    padding-top: 24px;
+}
 .form-column {
     display: flex;
     flex-direction: column;
@@ -224,10 +229,13 @@ input[type=text].error, .error {
     background: rgba(255, 99, 71, .2);
 }
 #form-messages {
-    padding: 24px;
+    padding: 12px;
     border-radius: 4px;
     visibility: hidden;
     display: none;
+}
+#form-messages p {
+    margin: 0;
 }
 #form-success {
     visibility: hidden;
@@ -239,6 +247,9 @@ input[type=text].error, .error {
     border: 1px solid yellowgreen;
     background: rgba(154, 205, 50, .2);
 }
+#form-success div.success-content h3 {
+    margin-top: 0;
+}
 textarea {
     width: 100%;
     resize: none;
@@ -246,7 +257,7 @@ textarea {
 }
 .button {
     font-family:inherit;
-    background-color: tomato;
+    background-color: lightseagreen;
     color: white;
     font-weight: 500;
     border-radius: 24px;
@@ -258,7 +269,7 @@ textarea {
     white-space: nowrap;
 }
 .button:hover {
-    background-color: orangered;
+    background-color: darkcyan;
 }
 .button-bar {
     clear: both;
@@ -269,6 +280,9 @@ textarea {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     border-bottom: 1px solid white;
+}
+.attendee-row:last-child {
+    border: 0;
 }
 .attendee-row.labels {
     font-weight: 500;

@@ -47,7 +47,7 @@ a.popupper {
     color: #333;
   }
   .popup .close:hover {
-    color: tomato;
+    color: lightseagreen;
   }
   .popup .content {
     overflow: auto;
