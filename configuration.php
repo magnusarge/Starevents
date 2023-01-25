@@ -1,6 +1,6 @@
 <?php
 /** Openweathermap settings */
-$api_key = "use_your_own_key_here";
+$api_key = "bef9599f3eab7a0320fee50002bb6de4";
 $new_api = false; // Old api skips query for coordinates and uses city name directly. See Events class.
 $max_clouding = 10; // This indicates condition when visibility of sky becomes zero. For testing, set it higher.
 
