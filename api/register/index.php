@@ -33,7 +33,7 @@ if ($decoded_without_errors) {
     if ( $response_code != 200 ) {
         $final_output["errors"] = $register->errors;
     } else {
-        $final_output["status"] = ["ok"];
+        $final_output["status"] = "ok";
     }
     
 } else {

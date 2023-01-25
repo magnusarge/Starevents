@@ -111,8 +111,6 @@ function buildAllEventsList(eventList, eventContainer) {
         eventContainer.appendChild(cityMenu);
         eventContainer.appendChild(allEvents);
 
-        /** Display max clouds */
-        displayMaxClouds(maxClouds);
     }
 }
 
@@ -165,9 +163,20 @@ function getVisibility(clouds, maxClouds) {
     return visibility;
 }
 
-function displayMaxClouds(maxClouds) {
+async function displayMaxClouds() {
     const cloudDisplay = document.getElementById("cloud-display");
-    cloudDisplay.innerText = maxClouds + "%";
+
+    const response = await fetch(
+		"maxclouds.php",
+		{ method: 'GET' }
+	);
+	if (!response.ok) {
+        cloudDisplay.innerText = "?%";
+		throw new Error(`HTTP error! status: ${response.status}`);
+	}
+	const maxClouds = await response.json();
+
+    cloudDisplay.innerText = maxClouds["max_clouds"] + "%";
 }
 
 function buildEventCell(dtText, clouds, maxClouds) {

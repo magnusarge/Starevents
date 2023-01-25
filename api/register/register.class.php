@@ -25,7 +25,6 @@ class Register {
 
         if ( !count($this->errors) ) {
 
-            //$this->response_code = 200; // tmp
             if ( $this->insertData($sql) ) {
                 $this->response_code = 200;
             } else {

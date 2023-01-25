@@ -28,7 +28,6 @@ body.plain {
     min-height: 100vh;
     flex-direction: column;
     justify-content: space-between;
-    /* background-color: rgba(16, 21, 28, .7); */
 }
 .header h1 {
     padding-top: 24px;

@@ -5,8 +5,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Star observing events</title>
     <meta content="Star observers events in Estonia." name="description">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+ 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cd30b48de3.js" crossorigin="anonymous"></script>
@@ -36,82 +35,7 @@
 
                 </ul>
                 
-                <div class="city-event-container visible" id="city-1">
-                <div class="event-row" title="Click to register. Visibility 25%">
-                    <div class="event-content">
-                        <div class="event-hour">23:00</div>
-                        <div class="event-date">
-                            <div class="day">Sat</div>
-                            <div class="date">Dec 
-                        21st</div>
-                        </div>
-                    </div>
-                    <div class="event-clouds">
-                        <div class="icon"><i class="fa-solid fa-eye-slash"></i></div>
-                        <div class="progress-frame">
-                            <div class="progress-bar" style="width:25%; background-color:crimson"></div>
-                        </div>
-                        <div class="icon"><i class="fa-solid fa-eye"></i></div>
-                        <div class="clouds-value">Clouds 6%</div>
-                    </div>
-                </div>
-                
-                <div class="event-row" title="Click to register. Visibility 25%">
-                    <div class="event-content">
-                        <div class="event-hour">02:00</div>
-                        <div class="event-date">
-                            <div class="day">Sun</div>
-                            <div class="date">Dec 
-                        22nd</div>
-                        </div>
-                    </div>
-                    <div class="event-clouds">
-                        <div class="icon"><i class="fa-solid fa-eye-slash"></i></div>
-                        <div class="progress-frame">
-                            <div class="progress-bar" style="width:25%; background-color:crimson"></div>
-                        </div>
-                        <div class="icon"><i class="fa-solid fa-eye"></i></div>
-                        <div class="clouds-value">Clouds 6%</div>
-                    </div>
-                </div>
-                
-                <div class="event-row" title="Click to register. Visibility 0%">
-                    <div class="event-content">
-                        <div class="event-hour">05:00</div>
-                        <div class="event-date">
-                            <div class="day">Sun</div>
-                            <div class="date">Dec 
-                        22nd</div>
-                        </div>
-                    </div>
-                    <div class="event-clouds">
-                        <div class="icon"><i class="fa-solid fa-eye-slash"></i></div>
-                        <div class="progress-frame">
-                            <div class="progress-bar" style="width:5%; background-color:crimson"></div>
-                        </div>
-                        <div class="icon"><i class="fa-solid fa-eye"></i></div>
-                        <div class="clouds-value">Clouds 8%</div>
-                    </div>
-                </div>
-                </div><div class="city-event-container " id="city-2">
-                <div class="event-row" title="Click to register. Visibility 13%">
-                    <div class="event-content">
-                        <div class="event-hour">05:00</div>
-                        <div class="event-date">
-                            <div class="day">Sun</div>
-                            <div class="date">Dec 22nd</div>
-                        </div>
-                    </div>
-                    <div class="event-clouds">
-                        <div class="icon"><i class="fa-solid fa-eye-slash"></i></div>
-                        <div class="progress-frame">
-                            <div class="progress-bar" style="width:13%; background-color:crimson"></div>
-                        </div>
-                        <div class="icon"><i class="fa-solid fa-eye"></i></div>
-                        <div class="clouds-value">Clouds 7%</div>
-                    </div>
-                </div>
-                </div></div>
+            </div>
 
 
 
@@ -188,10 +112,10 @@
 <script>
 
     addEventListener('DOMContentLoaded', (event) => {
+        displayMaxClouds();
         const eventsApiUrl = "/starevents/api/events/";
         const eventContainer = document.getElementById("event-container");
         loadEventList(eventsApiUrl, eventContainer);
-        //fillFormWithSampleData();
     });
 
     function showEventsForCity(self, id) {
@@ -204,11 +128,6 @@
         });
         let visibleList = document.getElementById(id);
         visibleList.classList.add("visible");
-    }
-
-    function fillFormWithSampleData() {
-        document.getElementById("register-name").value = "John";
-        document.getElementById("register-email").value = "john.d@email.com";
     }
 
 </script>
