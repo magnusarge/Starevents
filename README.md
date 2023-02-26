@@ -1,3 +1,8 @@
+<img width="950" alt="Screenshot 2023-02-26 at 16 23 58" src="https://user-images.githubusercontent.com/110186971/221416445-01797035-7676-42ea-afc8-670b1b3f6136.png">
+
+<img width="950" alt="Screenshot 2023-02-26 at 16 26 32" src="https://user-images.githubusercontent.com/110186971/221416582-ca668b87-6741-4127-ac37-6685cfa43ef5.png">
+
+
 Task overview
 
 PHP test work
@@ -24,4 +29,3 @@ Submitting the task
 3. Include your textual explanations (if needed).
 If you have any questions, feel free to send me an email. Good luck!
 
-<img width="950" alt="Screenshot 2023-02-26 at 16 23 58" src="https://user-images.githubusercontent.com/110186971/221416445-01797035-7676-42ea-afc8-670b1b3f6136.png">
