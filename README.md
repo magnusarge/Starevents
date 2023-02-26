@@ -23,3 +23,5 @@ Submitting the task
 2. Compress all the PHP files + SQL dump (of table’s definition) into a zip file and send it to email or use GitHub/GitLab if you prefer.
 3. Include your textual explanations (if needed).
 If you have any questions, feel free to send me an email. Good luck!
+
+<img width="950" alt="Screenshot 2023-02-26 at 16 23 58" src="https://user-images.githubusercontent.com/110186971/221416445-01797035-7676-42ea-afc8-670b1b3f6136.png">
