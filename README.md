@@ -1,6 +1,6 @@
 Task overview
+
 PHP test work
-Billity
 
 There will be an imaginary event for star observers held in different Estonian cities – in
 Tallinn, Tartu, Narva, Pärnu, Jõhvi, Jõgeva, Põlva and Valga. People will gather to observe and learn about the stars.
@@ -20,6 +20,6 @@ Build and present your work as if it would be a real project – pay attention t
 Submitting the task
 
 1. Send us the public link to the three endpoints (if you have made it public).
-2. Compress all the PHP files + SQL dump (of table’s definition) into a zip file and send it to indrek@billity.no or use GitHub/GitLab if you prefer.
+2. Compress all the PHP files + SQL dump (of table’s definition) into a zip file and send it to email or use GitHub/GitLab if you prefer.
 3. Include your textual explanations (if needed).
 If you have any questions, feel free to send me an email. Good luck!
